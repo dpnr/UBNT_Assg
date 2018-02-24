@@ -1,3 +1,20 @@
 body {
   background: green;
 }
+
+/* .row{
+  display: flex;
+  justify-content: space-around;
+} */
+
+.column{
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+
+
+
+
+
+

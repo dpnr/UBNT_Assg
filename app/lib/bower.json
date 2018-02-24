@@ -1,0 +1,21 @@
+{
+  "name": "lib",
+  "homepage": "https://github.com/u1068846/UBTN_Assg",
+  "authors": [
+    "u1068846 <u1068846@utah.edu>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^4.0.0",
+    "jquery": "^3.3.1"
+  }
+}
