@@ -25,9 +25,6 @@ function PlaceClients(props){
         {
             let distance = getDistance(props.gearPosition,item,props.coverage/2)
             let color = "red"
-            console.log('gear position '+ props.gearPosition)
-            console.log('item position '+ item)
-            console.log('distance '+ distance)
             
             if(distance <= props.coverage/2){ color = "green"}
             return   <circle key = {index} cx={item[0]} cy={item[1]} r="10" fill={color} />

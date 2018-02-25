@@ -4,7 +4,7 @@ import styled,{css} from 'styled-components';
 export const Panel  = styled.div`
     float:left;
     
-    background-color: #d4d4d4;
+    background-color: #d8d8d8;
     width : calc(100vw - 300px);
     height : 100vh;
   `;

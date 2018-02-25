@@ -1,6 +1,7 @@
 var React = require('react');
 import styled from 'styled-components';
-import {Panel,ItemHeading,Options,Select,SubPanel,Label,Bottom,Cancel,Buttons,Save} from './RightPanel.Style';
+import {Panel,ItemHeading,Options,Select,SubPanel,Label,Bottom,Cancel,Buttons,Save,Container,Span} from './RightPanel.Style';
+
 
 function PowerOptions(props){
     return(
@@ -8,9 +9,9 @@ function PowerOptions(props){
         <SubPanel>
             <Select 
             onChange = {props.update}>
-                <option defaultValue value="high">High(4dBm)</option>
-                <option value="medium">Medium(-6dBm)</option>
-                <option value="low">Low(-16dBm)</option>
+                <option defaultValue value="high">High(4 dBm)</option>
+                <option value="medium">Medium(-6 dBm)</option>
+                <option value="low">Low(-16 dBm)</option>
             </Select>
         </SubPanel>
         
@@ -19,14 +20,14 @@ function PowerOptions(props){
 
 function FreqButtons(props){
     return(
-        <div className = 'column'>
+        <Container>
             <Label>
-                <Options onChange = {props.update} type="radio" name="freq" value="2.4" defaultChecked /> 2.4 GHZ 
+                <Options onChange = {props.update} type="radio" name="freq" value="2.4" defaultChecked />  <Span> 2.4 GHZ </Span> 
             </Label>
             <Label>
-                <Options onChange = {props.update} type="radio" name="freq" value="5" /> 5 GHZ 
+                <Options onChange = {props.update} type="radio" name="freq" value="5" />  <Span> 5 GHZ </Span>
             </Label>        
-        </div>
+        </Container>
     )
 }
 
@@ -67,21 +68,22 @@ class RightPanel extends React.Component {
                     <ItemHeading>Radio:</ItemHeading>
                     <FreqButtons 
                     update = {this.freqChange.bind(null)} />
-                <Bottom>
                     
-                    <Buttons>
-                        <Save 
-                        className='btn btn-primary'
-                        onClick = {this.props.onSave.bind(null,this.state.power,this.state.frequency)}>
-                        SAVE
-                        </Save>
+                    <Bottom>
                         
-                        <Cancel 
-                        className='btn btn-primary'>
-                        CANCEL
-                        </Cancel>
-                    </Buttons>
-                </Bottom>
+                        <Buttons>
+                            <Save 
+                            className='btn btn-primary'
+                            onClick = {this.props.onSave.bind(null,this.state.power,this.state.frequency)}>
+                            SAVE
+                            </Save>
+                            
+                            <Cancel 
+                            className='btn btn-primary'>
+                            CANCEL
+                            </Cancel>
+                        </Buttons>
+                    </Bottom>
 
             </Panel>
         )

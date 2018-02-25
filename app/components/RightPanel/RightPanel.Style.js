@@ -1,5 +1,7 @@
 import styled,{css} from 'styled-components';
 import {ItemContainer} from '../LeftPanel/LeftPanel.Style';
+import arrow from '../../assets/expand-button.png'; 
+import arrow_hover from '../../assets/expand-button-hover.png'; 
 
 
 export const Panel = styled.div`
@@ -18,6 +20,13 @@ export const SubPanel = styled.div`
     justify-content: center;
 `;
 
+export const Container = styled(ItemContainer)`
+    
+    display: flex;
+    flex-direction: column;
+    color: #c3c3be;
+
+`;
 export const ItemHeading = styled(ItemContainer)`
     align-self: flex-start;
     color: grey;
@@ -25,33 +34,40 @@ export const ItemHeading = styled(ItemContainer)`
 `;
 
 export const Options = styled.input`
-    color: white;
+    color: #c3c3be;
     font-size: 16px;
 `;
 
-export const Dropdown = styled.div`
-    border: 1px solid #ccc;
-    width: 120px;
-    border-radius: 3px;
-    overflow: hidden;
-    background: #fafafa url("img/icon-select.png") no-repeat 90% 50%;
-`;
+
 
 export const Select = styled.select`
-    color: white;
+    color: #eff3f4;
     width: 250px;
     box-shadow: none;
-    background: transparent;
-    background-image: none;
-    // -webkit-appearance: none;
+    padding-left: 5px;
+    background: url(${arrow}) no-repeat 95% ;
     
+    // background: transparent;
+    
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+
+
     &:hover{
         outline: none;
+        color: black;
+        background: url(${arrow_hover}) no-repeat 95% ;
         background-color: grey;
+        
     }
 `;
 
 export const Label = styled.label`
+    color: #eff3f4;
+    padding-left: 10px;
+`;
+
+export const Span = styled.span`
     padding-left: 10px;
 `;
 
