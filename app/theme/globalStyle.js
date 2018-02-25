@@ -1,10 +1,10 @@
 import {injectGlobal} from 'styled-components';
 
 injectGlobal`
-@import url('https://fonts.googleapis.com/css?family=Fresca');
+// @import url('https://fonts.googleapis.com/css?family=Lato');
 
 body{
-    font-family: 'Fresca', sans-serif;
+    font-family: 'Lato', sans-serif;
 
 }
 

@@ -2,11 +2,12 @@ var React = require('react');
 import styled from 'styled-components';
 import {Panel,ItemHeading,Options,Select,SubPanel,Label,Bottom,Cancel,Buttons,Save} from './RightPanel.Style';
 
-function PowerOptions(){
+function PowerOptions(props){
     return(
         
         <SubPanel>
-            <Select >
+            <Select 
+            onChange = {props.update}>
                 <option defaultValue value="high">High(4dBm)</option>
                 <option value="medium">Medium(-6dBm)</option>
                 <option value="low">Low(-16dBm)</option>
@@ -20,30 +21,58 @@ function FreqButtons(props){
     return(
         <div className = 'column'>
             <Label>
-                <Options type="radio" name="freq" value="2.4" defaultChecked /> 2.4 GHZ 
+                <Options onChange = {props.update} type="radio" name="freq" value="2.4" defaultChecked /> 2.4 GHZ 
             </Label>
             <Label>
-                <Options type="radio" name="freq" value="5" /> 5 GHZ 
+                <Options onChange = {props.update} type="radio" name="freq" value="5" /> 5 GHZ 
             </Label>        
         </div>
     )
 }
 
 class RightPanel extends React.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            power: 'high',
+            frequency: '2.4'
+        }
+
+        this.powerChange = this.powerChange.bind(this);
+        this.freqChange = this.freqChange.bind(this);
+    }
+
+    powerChange(event){
+        var newPower = event.target.value;
+        this.setState(function(){
+            return {power: newPower};
+        })
+    }
+
+    freqChange(event){
+        var newFreq = event.target.value;
+        this.setState(function(){
+            return {frequency: newFreq};
+        })
+    }
+
     render(){
         return(
             <Panel>
                 
                     <ItemHeading>TX power:</ItemHeading>
-                    <PowerOptions />
+                    <PowerOptions 
+                    update = {this.powerChange.bind(null)}/>
                     <br/>
                     <ItemHeading>Radio:</ItemHeading>
-                    <FreqButtons />
+                    <FreqButtons 
+                    update = {this.freqChange.bind(null)} />
                 <Bottom>
                     
                     <Buttons>
                         <Save 
-                        className='btn btn-primary'>
+                        className='btn btn-primary'
+                        onClick = {this.props.onSave.bind(null,this.state.power,this.state.frequency)}>
                         SAVE
                         </Save>
                         

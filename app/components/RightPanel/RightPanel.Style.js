@@ -61,7 +61,7 @@ export const Bottom = styled.div`
     margin: 0 auto;
     border-style: solid;
     border-color: white;
-    border-width: 4px 0px 0px 0px;
+    border-width: 1px 0px 0px 0px;
 `;
 
 export const Buttons = styled.div`
@@ -73,12 +73,16 @@ export const Buttons = styled.div`
 export const Save =styled.button`
     background-color: #189fdf;
     color: white;
-`
+    
+`;
 
 export const Cancel = styled.button`
     padding-left : 30px;
     background-color: black;
     color: #1779b5;
     border: none;
+    &:hover{
+        background-color: black;
+    }
 
 `;
