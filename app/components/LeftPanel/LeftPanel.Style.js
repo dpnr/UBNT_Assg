@@ -3,6 +3,7 @@ import styled,{css} from 'styled-components';
 
 export const Panel  = styled.div`
     float:left;
+    
     background-color: #d4d4d4;
     width : calc(100vw - 300px);
     height : 100vh;
@@ -13,12 +14,15 @@ export const ItemContainer = styled.div`
 `;
 
 export const Range = styled.div`
-    
+    position:absolute;
+    top:0px;
+    left:0px;
     display: flex;
     justify-content: center; /* align horizontal */
     align-items: center; /* align vertical */
     background: rgba(68, 137, 244, 0.4); 
     border-radius: 50%;
+    
 
     ${({coverage})=> coverage && css` 
           width : ${coverage}px;

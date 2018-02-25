@@ -6,8 +6,9 @@ export const Panel = styled.div`
     
     float: right;
     background-color: black;
-    width: 300px;
+    width: 285px;
     height : 100vh;
+    z-index : 9999;
   
 `;
 
