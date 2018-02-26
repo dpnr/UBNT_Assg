@@ -21,9 +21,18 @@ class App extends React.Component{
         let powerMap = {'high':4,'medium':6,'low':16}
         let freqMap = {'2.4':2.4,'5':5}
         console.log(pow +'  '+ freq);
+        let power = powerMap[pow];
+        let frequency = freqMap[freq];
+
+        let d = Math.sqrt(power) * (3*Math.pow(10,8)/ (frequency * Math.pow(10,9))) / (4*3.14)
+        
+        let range = d*Math.pow(10,4)
+        console.log(range);
 
         //calculate the value here
-        return 300;
+
+
+        return range;
     }
     updateValues(pow,freq){
         this.setState(function(){
@@ -39,7 +48,9 @@ class App extends React.Component{
                 <LeftPanel 
                 coverage = {this.state.coverage}/>
                 <RightPanel 
-                onSave = {this.updateValues} />
+                onSave = {this.updateValues}
+                savedPower = {this.state.power}
+                savedFreq = {this.state.frequency} />
             
             </div>
         )

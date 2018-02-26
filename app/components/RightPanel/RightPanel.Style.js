@@ -8,7 +8,7 @@ export const Panel = styled.div`
     
     float: right;
     background-color: black;
-    width: 285px;
+    width: 300px;
     height : 100vh;
     z-index : 9999;
   
@@ -94,7 +94,7 @@ export const Save =styled.button`
 `;
 
 export const Cancel = styled.button`
-    padding-left : 30px;
+    margin-left : 30px;
     background-color: black;
     color: #1779b5;
     border: none;
