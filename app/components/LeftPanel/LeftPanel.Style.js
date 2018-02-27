@@ -3,9 +3,8 @@ import styled,{css} from 'styled-components';
 
 export const Panel  = styled.div`
     float:left;
-    
     background-color: #d8d8d8;
-    width : calc(100vw - 300px);
+    width : calc(100% - 300px);
     height : 100vh;
   `;
 
