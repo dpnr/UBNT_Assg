@@ -20,14 +20,14 @@ class App extends React.Component{
         // Have to write the math logic here
         let powerMap = {'high':4,'medium':-6,'low':-16}
         let freqMap = {'2.4':2.4,'5':5}
-        console.log(pow +'  '+ freq);
         let power = powerMap[pow];
         let frequency = freqMap[freq];
 
         let d = Math.pow(10,((power+80 - (92.45 + (20* Math.log10(frequency)) ))/20));
         
         let range = 67 + d*Math.pow(10,3); //70px is the radius in pixels occupied by the device
-        console.log(range);
+        console.log('Range of coverage in meters:');
+        console.log(range-67);
 
         //calculate the value here
 

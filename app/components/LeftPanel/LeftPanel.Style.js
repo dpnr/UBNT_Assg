@@ -3,6 +3,7 @@ import styled,{css} from 'styled-components';
 
 export const Panel  = styled.div`
     float:left;
+    position: relative;
     background-color: #d8d8d8;
     width : calc(100% - 300px);
     height : 100vh;
@@ -34,4 +35,17 @@ export const Image = styled.img`
     display:block;
     margin:auto;
     vertical-align: middle;
+`;
+
+export const Scale = styled.div`
+    position:absolute;
+    bottom:0;
+    right:0;
+    color: grey;
+    text-align: center;
+    width : 100px;
+    margin: 20px;
+    border-style: solid;
+    border-color: grey;
+    border-width: 0px 2px 2px 2px; 
 `;

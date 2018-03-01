@@ -4,7 +4,7 @@ import {Panel,ItemContainer} from './LeftPanel.Style';
 var path = require('path');
 import Device from '../../assets/device.png';
 import Draggable from 'react-draggable';
-import {Range,Image} from './LeftPanel.Style';
+import {Range,Image,Scale} from './LeftPanel.Style';
 import {ReactHeight} from 'react-height';
 
 function randRange( minNum, maxNum) {
@@ -86,7 +86,6 @@ class LeftPanel extends React.Component {
         params = params.substring(10,params.length-3)
         let x = parseInt(params.substring(0,params.indexOf('p')))
         let y = parseInt(params.substring(params.indexOf('p')+3, params.length ))
-        console.log(x,y)
         this.setState (function(){
             return {
                 gear : [x,y]
@@ -114,7 +113,7 @@ class LeftPanel extends React.Component {
                     
                     axis="both"
                     handle=".handle"
-                    bounds= {{left: 0 , top: -1*this.props.coverage, right:  this.state.width - 314 - this.props.coverage  , bottom: this.state.height+this.props.coverage}}
+                    bounds= {{left: 0 , top: -1*this.props.coverage, right:  this.state.width - 314 - this.props.coverage  , bottom: this.state.height}}
                     defaultPosition={{x: 0, y: 0}}
                     position={null}
                     grid={[1, 1]}
@@ -133,12 +132,14 @@ class LeftPanel extends React.Component {
                     
                     
                 </Draggable>
-                <svg width = {this.state.width} height = {this.state.height}>
+                <svg width = {this.state.width-315} height = {this.state.height}>
                 <PlaceClients 
                             spots = {this.state.clients}
                             gearPosition = {this.state.gear}
                             coverage = {this.props.coverage}/>
                 </svg>
+
+                <Scale> 100m </Scale>
                 
             </Panel>
             
