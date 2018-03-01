@@ -2,7 +2,7 @@ var React = require('react');
 import styled from 'styled-components';
 import {Panel,ItemContainer} from './LeftPanel.Style';
 var path = require('path');
-import Device from '../../assets/dragger.png';
+import Device from '../../assets/device.png';
 import Draggable from 'react-draggable';
 import {Range,Image} from './LeftPanel.Style';
 import {ReactHeight} from 'react-height';
@@ -46,7 +46,7 @@ class LeftPanel extends React.Component {
         this.state = {
             gear:[0,0],
             clients:[],
-            width: window.innerWidth-300 ,
+            width: window.innerWidth ,
             height: window.innerHeight
         }
 
@@ -114,7 +114,7 @@ class LeftPanel extends React.Component {
                     
                     axis="both"
                     handle=".handle"
-                    bounds= {{left: 0 , top: -1*this.props.coverage, right: this.state.width - this.props.coverage - 300  , bottom: this.state.height+this.props.coverage}}
+                    bounds= {{left: 0 , top: -1*this.props.coverage, right:  this.state.width - 314 - this.props.coverage  , bottom: this.state.height+this.props.coverage}}
                     defaultPosition={{x: 0, y: 0}}
                     position={null}
                     grid={[1, 1]}
@@ -123,8 +123,8 @@ class LeftPanel extends React.Component {
                     onStop={this.updateGearPosition }>
                     {/* onStop={this.handleStop }> */}
                     
-                    <Range className="handle" coverage = {this.props.coverage}>
-                        <Image
+                    <Range  coverage = {this.props.coverage}>
+                        <Image className="handle"
                             src = {Device}
                             alt = 'Image of a device'
                             />

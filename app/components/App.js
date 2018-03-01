@@ -18,21 +18,21 @@ class App extends React.Component{
 
     getCoverage(pow,freq){
         // Have to write the math logic here
-        let powerMap = {'high':4,'medium':6,'low':16}
+        let powerMap = {'high':4,'medium':-6,'low':-16}
         let freqMap = {'2.4':2.4,'5':5}
         console.log(pow +'  '+ freq);
         let power = powerMap[pow];
         let frequency = freqMap[freq];
 
-        let d = Math.sqrt(power) * (3*Math.pow(10,8)/ (frequency * Math.pow(10,9))) / (4*3.14)
+        let d = Math.pow(10,((power+80 - (92.45 + (20* Math.log10(frequency)) ))/20));
         
-        let range = d*Math.pow(10,4)
+        let range = 67 + d*Math.pow(10,3); //70px is the radius in pixels occupied by the device
         console.log(range);
 
         //calculate the value here
 
 
-        return range;
+        return 2*range;
     }
     updateValues(pow,freq){
         this.setState(function(){
