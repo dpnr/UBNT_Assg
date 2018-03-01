@@ -113,7 +113,7 @@ class LeftPanel extends React.Component {
                     
                     axis="both"
                     handle=".handle"
-                    bounds= {{left: 0 , top: -1*this.props.coverage, right:  this.state.width - 314 - this.props.coverage  , bottom: this.state.height}}
+                    bounds= {{left: 0 , top: -1*this.props.coverage, right:  this.state.width - 300 - this.props.coverage  , bottom: this.state.height}}
                     defaultPosition={{x: 0, y: 0}}
                     position={null}
                     grid={[1, 1]}
