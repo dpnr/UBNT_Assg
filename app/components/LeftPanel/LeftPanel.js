@@ -132,7 +132,7 @@ class LeftPanel extends React.Component {
                     
                     
                 </Draggable>
-                <svg width = {this.state.width-315} height = {this.state.height}>
+                <svg width = {this.state.width-300} height = {this.state.height}>
                 <PlaceClients 
                             spots = {this.state.clients}
                             gearPosition = {this.state.gear}
