@@ -3,8 +3,8 @@
 
 Live Tool
 ------------
-
-https://coverage-simulator-60d4b.firebaseapp.com/
+Drag and Drop the Access Point to check the coverage
+https://coverage-simulator-60d4b.firebaseapp.com/ 
 
 Installation
 ------------
